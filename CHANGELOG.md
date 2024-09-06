@@ -25,6 +25,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - pytest-based testing infrastructure, first unit tests of backend and testing on all supported Python versions (#1245 and #1271).
 - Black and isort added to dev dependencies group (#1217).
 
+- Adding `CHAINLIT_APP_ROOT` Environment Variable to modify `APP_ROOT`, enabling the ability to set the location of config.toml and other setting files.
+- changing the default host from 0.0.0.0 to 127.0.0.1
+
 ## [1.1.403rc0] - 2024-08-13
 
 ### Fixed
