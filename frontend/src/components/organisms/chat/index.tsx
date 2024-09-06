@@ -30,6 +30,7 @@ import Messages from './Messages';
 import DropScreen from './dropScreen';
 import InputBox from './inputBox';
 import WelcomeScreen from './welcomeScreen';
+// import CustomStarter from './customComponents/CustomStarter';
 
 const Chat = () => {
   const { user } = useAuth();
@@ -149,7 +150,7 @@ const Chat = () => {
     options: { noClick: true }
   });
 
-  const { threadId } = useChatMessages();
+  const { threadId } = useChatMessages(); //const { threadId,messages } can be used for another appraoch for starters
 
   useEffect(() => {
     const currentPage = new URL(window.location.href);
@@ -212,6 +213,7 @@ const Chat = () => {
             setAutoScroll={setAutoScroll}
           >
             <WelcomeScreen />
+            {/* {messages.length === 0 ? <CustomStarter/> : ''} //can be used as another approach to display custom starter on start*/}
             <Box py={2} />
             <Messages />
           </ScrollContainer>

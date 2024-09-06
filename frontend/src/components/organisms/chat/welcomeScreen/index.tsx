@@ -1,5 +1,4 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
-
 import { Avatar, Grid, Stack, Typography } from '@mui/material';
 import Fade from '@mui/material/Fade';
 
@@ -11,6 +10,7 @@ import {
   useConfig
 } from '@chainlit/react-client';
 
+import { startersData } from '../customComponents/starter.data';
 import Starter from './starter';
 
 interface Props {
@@ -73,7 +73,11 @@ export default function WelcomeScreen({ hideLogo }: Props) {
         return selectedChatProfile.starters.slice(0, 4);
       }
     }
-    return config?.starters;
+    const selectedStarters =
+      config?.starters && config.starters.length > 0
+        ? config.starters
+        : startersData; //added initial starters data
+    return selectedStarters;
   }, [config, chatProfile]);
 
   if (!starters?.length) {
